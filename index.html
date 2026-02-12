@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💘 Will You Be My Valentine? 💘</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Quicksand:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Effects -->
+    <canvas id="bgCanvas"></canvas>
+    <div class="heart-shadows" id="heartShadows"></div>
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- ===== SCREEN 1: INTRO ===== -->
+    <section class="screen screen-intro active" id="screen1">
+        <div class="screen-inner">
+            <div class="rose-petals" id="rosePetals"></div>
+
+            <div class="magic-envelope" id="envelope">
+                <div class="env-back"></div>
+                <div class="env-letter">
+                    <div class="letter-content">
+                        <p>I have something<br>special for you...</p>
+                        <span class="letter-heart">💌</span>
+                    </div>
+                </div>
+                <div class="env-front"></div>
+                <div class="env-flap"></div>
+            </div>
+
+            <h1 class="intro-heading">
+                <span class="word" style="--i:0">I</span>
+                <span class="word" style="--i:1">Have</span>
+                <span class="word" style="--i:2">Something</span>
+                <span class="word" style="--i:3">To</span>
+                <span class="word" style="--i:4">Ask</span>
+                <span class="word" style="--i:5">You...</span>
+            </h1>
+
+            <p class="intro-sub">Are you ready? 🥺</p>
+
+            <button class="magic-btn" onclick="goToScreen(2)">
+                <span class="btn-bg"></span>
+                <span class="btn-text">Open My Heart ✨</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SCREEN 2: THE BIG QUESTION ===== -->
+    <section class="screen screen-question" id="screen2">
+        <div class="screen-inner">
+            <!-- Animated Teddy Bear -->
+            <div class="teddy" id="teddy">
+                <div class="teddy-body">
+                    <div class="teddy-belly"></div>
+                    <div class="teddy-arm left-arm"></div>
+                    <div class="teddy-arm right-arm"></div>
+                    <div class="held-heart" id="heldHeart">❤️</div>
+                </div>
+                <div class="teddy-head">
+                    <div class="teddy-ear left-ear"><div class="ear-inner"></div></div>
+                    <div class="teddy-ear right-ear"><div class="ear-inner"></div></div>
+                    <div class="teddy-face">
+                        <div class="teddy-eye left-eye"><div class="eye-shine"></div></div>
+                        <div class="teddy-eye right-eye"><div class="eye-shine"></div></div>
+                        <div class="teddy-nose"></div>
+                        <div class="teddy-mouth" id="teddyMouth"></div>
+                        <div class="teddy-cheek left-cheek"></div>
+                        <div class="teddy-cheek right-cheek"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="question-text">
+                <span class="q-line">Will You Be</span>
+                <span class="q-line big">My Valentine?</span>
+            </h2>
+
+            <p class="question-plea" id="plea">Please say yes... 🥺💕</p>
+
+            <div class="answer-area" id="answerArea">
+                <button class="btn-yes" id="btnYes" onclick="handleYes()">
+                    <span class="yes-glow"></span>
+                    <span class="yes-text">Yes! 💕</span>
+                </button>
+                <button class="btn-no" id="btnNo">No 😢</button>
+            </div>
+
+            <p class="attempt-msg" id="attemptMsg"></p>
+        </div>
+    </section>
+
+    <!-- ===== SCREEN 3: CELEBRATION ===== -->
+    <section class="screen screen-celebrate" id="screen3">
+        <div class="fireworks-container" id="fireworks"></div>
+        <div class="confetti-rain" id="confetti"></div>
+        <div class="screen-inner">
+            <div class="celebrate-emojis">
+                <span style="--d:0s">🎉</span>
+                <span style="--d:0.15s">💕</span>
+                <span style="--d:0.3s">🥳</span>
+                <span style="--d:0.45s">💖</span>
+                <span style="--d:0.6s">🎉</span>
+            </div>
+
+            <h2 class="celebrate-heading">YAAAY!</h2>
+            <h3 class="celebrate-sub">I Knew You'd Say Yes! 🥹</h3>
+            <p class="celebrate-text">You just made me the happiest person in the whole universe!</p>
+
+            <div class="celebrate-heart-shower" id="heartShower"></div>
+
+            <button class="magic-btn" onclick="goToScreen(4)">
+                <span class="btn-bg"></span>
+                <span class="btn-text">See Your Surprise 🎁</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SCREEN 4: LOVE LETTER ===== -->
+    <section class="screen screen-letter" id="screen4">
+        <div class="screen-inner">
+            <div class="love-letter-card">
+                <div class="letter-glow"></div>
+                <div class="letter-border-anim"></div>
+                <div class="lc-decor tl">🌹</div>
+                <div class="lc-decor tr">🌹</div>
+                <div class="lc-decor bl">✨</div>
+                <div class="lc-decor br">✨</div>
+                <div class="lc-stars">
+                    <span style="--x:10%;--y:20%;--s:0.8s">⭐</span>
+                    <span style="--x:85%;--y:15%;--s:1.2s">💫</span>
+                    <span style="--x:90%;--y:75%;--s:1s">⭐</span>
+                    <span style="--x:5%;--y:80%;--s:1.4s">💫</span>
+                </div>
+
+                <h2 class="lc-title">My Dearest Valentine</h2>
+                <div class="lc-divider"><span>💝</span></div>
+
+                <div class="lc-body">
+                    <p class="lc-para" style="--d:0.3s">Every moment with you feels like a beautiful dream I never want to wake up from. You are my sunshine on cloudy days.</p>
+                    <p class="lc-para" style="--d:0.6s">Thank you for being you — perfectly imperfect and absolutely wonderful. I love every little thing about you. 💕</p>
+                    <p class="lc-para" style="--d:0.9s">You make my world brighter, my heart fuller, and my life more beautiful than I ever imagined possible.</p>
+                    <p class="lc-sign" style="--d:1.2s">Forever & Always Yours,<br><span class="sign-heart">❤️</span></p>
+                </div>
+            </div>
+
+            <button class="magic-btn" onclick="goToScreen(5)">
+                <span class="btn-bg"></span>
+                <span class="btn-text">See Our Memories 📸</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SCREEN 5: PHOTO GALLERY ===== -->
+    <section class="screen screen-gallery" id="screen5">
+        <div class="screen-inner">
+            <h2 class="gallery-heading">Our Beautiful Memories 📸</h2>
+            <p class="gallery-sub">Every picture tells our love story</p>
+
+            <div class="photo-grid">
+                <div class="photo-card" style="--r:-4deg;--del:0.1s">
+                    <div class="photo-frame">
+                        <img src="images/photo1.jpg" alt="Memory 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="background:linear-gradient(135deg,#ff9a9e,#fad0c4)"><span>🥰</span></div>
+                    </div>
+                    <p class="photo-label">Our First Date ❤️</p>
+                </div>
+                <div class="photo-card" style="--r:3deg;--del:0.2s">
+                    <div class="photo-frame">
+                        <img src="images/photo2.jpg" alt="Memory 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)"><span>😍</span></div>
+                    </div>
+                    <p class="photo-label">That Magical Evening 🌙</p>
+                </div>
+                <div class="photo-card" style="--r:-2deg;--del:0.3s">
+                    <div class="photo-frame">
+                        <img src="images/photo3.jpg" alt="Memory 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="background:linear-gradient(135deg,#ffecd2,#fcb69f)"><span>💑</span></div>
+                    </div>
+                    <p class="photo-label">Together Forever 💕</p>
+                </div>
+                <div class="photo-card" style="--r:5deg;--del:0.4s">
+                    <div class="photo-frame">
+                        <img src="images/photo4.jpg" alt="Memory 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="background:linear-gradient(135deg,#ff9a9e,#fecfef)"><span>🌹</span></div>
+                    </div>
+                    <p class="photo-label">My Favorite Person 🥹</p>
+                </div>
+                <div class="photo-card" style="--r:-3deg;--del:0.5s">
+                    <div class="photo-frame">
+                        <img src="images/photo5.jpg" alt="Memory 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><span>💏</span></div>
+                    </div>
+                    <p class="photo-label">Us Against The World 🌍</p>
+                </div>
+                <div class="photo-card" style="--r:4deg;--del:0.6s">
+                    <div class="photo-frame">
+                        <img src="images/photo6.jpg" alt="Memory 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="background:linear-gradient(135deg,#667eea,#764ba2)"><span>✈️</span></div>
+                    </div>
+                    <p class="photo-label">Our Adventures 🗺️</p>
+                </div>
+            </div>
+
+            <p class="gallery-note">💡 Add your photos as photo1.jpg–photo6.jpg in the <b>images/</b> folder</p>
+
+            <button class="magic-btn" onclick="goToScreen(6)">
+                <span class="btn-bg"></span>
+                <span class="btn-text">Listen to Our Song 🎵</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SCREEN 6: MUSIC PLAYER ===== -->
+    <section class="screen screen-music" id="screen6">
+        <div class="screen-inner">
+            <h2 class="music-heading">Our Love Playlist 🎵</h2>
+            <p class="music-sub">Songs that remind me of you</p>
+
+            <div class="player-box">
+                <div class="disc-area">
+                    <div class="disc" id="disc">
+                        <div class="disc-center"><span>💕</span></div>
+                        <div class="disc-ring r1"></div>
+                        <div class="disc-ring r2"></div>
+                        <div class="disc-ring r3"></div>
+                        <div class="disc-shine"></div>
+                    </div>
+                    <div class="tone-arm" id="toneArm"></div>
+                </div>
+
+                <div class="player-info">
+                    <span class="pi-label">Now Playing</span>
+                    <h3 class="pi-title" id="piTitle">Select a song</h3>
+                    <p class="pi-artist" id="piArtist">—</p>
+                    <div class="eq-bars" id="eqBars">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <button class="pause-btn" id="pauseBtn" onclick="togglePause()" style="display:none;">⏸ Pause</button>
+                </div>
+            </div>
+
+            <!-- Hidden YouTube Player -->
+            <div id="ytWrap" style="position:fixed;bottom:-300px;left:0;width:1px;height:1px;opacity:0;pointer-events:none;z-index:-1;">
+                <div id="ytPlayer"></div>
+            </div>
+
+            <div class="track-list">
+                <div class="track" onclick="playSong(this,'Perfect','Ed Sheeran','2Vv-BfVoq4g')">
+                    <div class="track-num">01</div>
+                    <div class="track-info"><h4>Perfect</h4><p>Ed Sheeran</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,'All of Me','John Legend','450p7goxZqg')">
+                    <div class="track-num">02</div>
+                    <div class="track-info"><h4>All of Me</h4><p>John Legend</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,'A Thousand Years','Christina Perri','rtOvBOTyX00')">
+                    <div class="track-num">03</div>
+                    <div class="track-info"><h4>A Thousand Years</h4><p>Christina Perri</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,'Enna Solla Pogirai','A.R. Rahman','hesKQ_y9f7k')">
+                    <div class="track-num">04</div>
+                    <div class="track-info"><h4>Enna Solla Pogirai</h4><p>A.R. Rahman</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,'Munbe Vaa','A.R. Rahman','rSaC-YbSDpo')">
+                    <div class="track-num">05</div>
+                    <div class="track-info"><h4>Munbe Vaa</h4><p>A.R. Rahman</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,'Tum Hi Ho','Arijit Singh','Umqb9KENgmk')">
+                    <div class="track-num">06</div>
+                    <div class="track-info"><h4>Tum Hi Ho</h4><p>Arijit Singh</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,'Thinking Out Loud','Ed Sheeran','lp-EO5I60KA')">
+                    <div class="track-num">07</div>
+                    <div class="track-info"><h4>Thinking Out Loud</h4><p>Ed Sheeran</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+                <div class="track" onclick="playSong(this,`Can't Help Falling in Love`,'Elvis Presley','vGJTaP6anOU')">
+                    <div class="track-num">08</div>
+                    <div class="track-info"><h4>Can't Help Falling in Love</h4><p>Elvis Presley</p></div>
+                    <div class="track-play">▶</div>
+                </div>
+            </div>
+
+            <button class="magic-btn" onclick="goToScreen(7)">
+                <span class="btn-bg"></span>
+                <span class="btn-text">One Last Thing... 💌</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== SCREEN 7: FINAL ===== -->
+    <section class="screen screen-final" id="screen7">
+        <div class="screen-inner">
+            <div class="mega-heart" id="megaHeart">
+                <span>❤️</span>
+                <div class="heart-rings">
+                    <div class="h-ring r1"></div>
+                    <div class="h-ring r2"></div>
+                    <div class="h-ring r3"></div>
+                </div>
+            </div>
+
+            <h2 class="final-heading">You + Me = Forever</h2>
+
+            <div class="typewriter-box">
+                <p class="typewriter-text" id="twText"></p>
+                <span class="tw-cursor" id="twCursor">|</span>
+            </div>
+
+            <div class="final-emoji-row">
+                <span style="--d:0s">💕</span>
+                <span style="--d:0.2s">🌹</span>
+                <span style="--d:0.4s">💗</span>
+                <span style="--d:0.6s">✨</span>
+                <span style="--d:0.8s">💖</span>
+                <span style="--d:1s">🌹</span>
+                <span style="--d:1.2s">💕</span>
+            </div>
+
+            <button class="magic-btn restart" onclick="restart()">
+                <span class="btn-bg"></span>
+                <span class="btn-text">Start Over 🔄</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Side Nav Dots -->
+    <nav class="side-nav" id="sideNav">
+        <span class="nav-dot active" data-s="1"></span>
+        <span class="nav-dot" data-s="2"></span>
+        <span class="nav-dot locked" data-s="3">🔒</span>
+        <span class="nav-dot locked" data-s="4">🔒</span>
+        <span class="nav-dot locked" data-s="5">🔒</span>
+        <span class="nav-dot locked" data-s="6">🔒</span>
+        <span class="nav-dot locked" data-s="7">🔒</span>
+    </nav>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
